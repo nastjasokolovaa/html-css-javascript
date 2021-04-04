@@ -1,0 +1,36 @@
+<!--Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+где arg1, arg2 – значения аргументов, operation – строка с названием операции.
+В зависимости от переданного значения операции выполнить одну из арифметических операций
+(использовать функции из пункта 3) и вернуть полученное значение (использовать switch).-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Lesson2</title>
+</head>
+<body>
+<script>
+    function mathOperation(arg1, arg2, operation) {
+        switch (operation) {
+            case 'Сложение':
+                console.log('Сумма двух чисел равна ' + (arg1 + arg2))
+                break
+            case 'Вычитание':
+                console.log('Разница двух чисел равна ' + (arg1 - arg2))
+                break
+            case 'Умножение':
+                console.log('Произведение двух чисел равно ' + (arg1 * arg2))
+                break
+            case 'Деление':
+                console.log('Разность двух чисел равна ' + (arg1 / arg2))
+                break
+            default:
+                console.log('Некорректный математический оператор')
+        }
+    }
+
+    mathOperation(6, 3, 'Умножение')
+</script>
+</body>
+</html>

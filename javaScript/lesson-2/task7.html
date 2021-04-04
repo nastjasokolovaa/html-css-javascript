@@ -1,0 +1,25 @@
+<!--Сравнить null и 0. Попробуйте объяснить результат.-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Lesson2</title>
+</head>
+<body>
+<script>
+    const a = null
+    const b = 0
+
+    function comparison(a, b) {
+        console.log(a == b, a > b, a >= b, a === b)
+    }
+
+    comparison(a, b)
+
+    // результат false false true false
+    // >= нестрогое сравнение, поэтому оно приводит null к 0 и сравнивя их получается истина
+    // == нестрогое равенство не приводит ни к чему значения и получаем ложь
+</script>
+</body>
+</html>
