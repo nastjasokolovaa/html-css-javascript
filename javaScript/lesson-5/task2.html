@@ -1,0 +1,26 @@
+<!--Сделать генерацию корзины динамической: верстка корзины не должна находиться в HTML-структуре.
+ Там должен быть только div, в который будет вставляться корзина, сгенерированная на базе JS:-->
+<!--3.1. Пустая корзина должна выводить строку «Корзина пуста»;-->
+<!--3.2. Наполненная должна выводить «В корзине: n товаров на сумму m рублей».-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chess</title>
+
+    <style>
+         .shoppingCartList{
+            border: 1px solid black;
+             background: aliceblue;
+        }
+         input {
+             height: 20px;
+         }
+    </style>
+</head>
+<body>
+    <div id="shoppingCartMain" class="shoppingCartList"></div>
+    <script src="shoppingCart.js"></script>
+</body>
+</html>
