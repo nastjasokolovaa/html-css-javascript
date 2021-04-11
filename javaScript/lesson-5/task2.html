@@ -7,20 +7,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Chess</title>
-
-    <style>
-         .shoppingCartList{
-            border: 1px solid black;
-             background: aliceblue;
-        }
-         input {
-             height: 20px;
-         }
-    </style>
+    <title>Shop</title>
+    <link rel="stylesheet" href="styleShopping.css">
 </head>
 <body>
-    <div id="shoppingCartMain" class="shoppingCartList"></div>
+    <div id="shoppingCartMain" class="shoppingCartList">
+        <div id="shoppingCartLeft" class="catalog">
+            <div id="tableLeft"></div>
+            <div id="tableRight"></div>
+        </div>
+        <div id="shoppingCartRight" class="shoppingCart"></div>
+    </div>
+    <script src="catalog.js"></script>
     <script src="shoppingCart.js"></script>
 </body>
 </html>
