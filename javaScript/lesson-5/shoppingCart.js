@@ -111,7 +111,6 @@ const shoppingCart = {
         }
         table.appendChild(this.renderSum())
         table.appendChild(this.renderClearButton(onChange))
-
         this.container.appendChild(table)
     },
 }
