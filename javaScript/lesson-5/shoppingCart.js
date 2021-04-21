@@ -1,13 +1,24 @@
 'use strict'
 
 const shoppingCart = {
+    container: document.getElementById('shoppingCartRight'),
+
     state: {
-        items: {
-            1: {id: 1, name: 'Гитара', price: 15000, quantity: 1},
-            12: {id: 12, name: 'Микрофон', price: 1800, quantity: 1},
-            45: {id: 45, name: 'Батарейки', price: 200, quantity: 3},
-            79: {id: 79, name: 'Футляр для гитары', price: 3000, quantity: 1},
-        },
+        items: {},
+    },
+
+    addToCart(item) {
+        if (item.id in this.state.items){
+            this.state.items[item.id].quantity++
+        } else {
+            this.state.items[item.id] = {
+                id: item.id,
+                name: item.name,
+                price: item.price,
+                quantity: 1,
+            }
+        }
+        this.render()
     },
 
     renderSum() {
@@ -83,15 +94,16 @@ const shoppingCart = {
         return tr
     },
 
-    render(shoppingCartContainer) {
+    render() {
         if (Object.keys(this.state.items).length === 0) {
-            shoppingCartContainer.innerHTML = 'Корзина пуста'
+            this.container.innerHTML = 'Корзина пуста'
             return
         }
+        this.container.innerHTML = ''
+
         const table = document.createElement('table')
         const onChange = () => {
-            shoppingCartContainer.removeChild(table)
-            this.render(shoppingCartContainer)
+            this.render(this.container)
         }
         for (const id in this.state.items) {
             const row = this.renderRow(this.state.items[id], onChange)
@@ -99,9 +111,8 @@ const shoppingCart = {
         }
         table.appendChild(this.renderSum())
         table.appendChild(this.renderClearButton(onChange))
-
-        shoppingCartContainer.appendChild(table)
+        this.container.appendChild(table)
     },
 }
 
-shoppingCart.render(document.getElementById('shoppingCartMain'))
+shoppingCart.render()

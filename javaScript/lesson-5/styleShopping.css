@@ -1,0 +1,35 @@
+.shoppingCartList {
+    border: 1px solid black;
+    background: aliceblue;
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    height: 20px;
+}
+
+.catalog {
+    border: 1px solid black;
+    background: #cccccc;
+    display: flex;
+    justify-content: space-around;
+    width: 65%;
+}
+
+table {
+    margin-bottom: 15px;
+}
+
+#tableLeft > table > tr:nth-child(3n) {
+    height: 50px;
+}
+
+#tableRight > table > tr:nth-child(3n) {
+    height: 50px;
+}
+
+td {
+    height: 10px;
+    border: 1px solid black;
+}
